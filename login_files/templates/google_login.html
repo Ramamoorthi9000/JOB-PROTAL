@@ -1,0 +1,59 @@
+{% load static%}
+{% load socialaccount %}
+
+
+
+   
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hire Portal Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+ <link rel="stylesheet" href="{%static 'src/output.css'%}">
+</head>
+
+<body class="min-h-screen bg-gradient from-blue-100 via-white to-blue-200 flex items-center justify-center p-4">
+
+  <div class="bg-white/90 shadow-xl rounded-xl w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 overflow-hidden backdrop-blur">
+
+    <!-- LEFT: Job Skills -->
+    <div class="p-6 bg-blue-600 text-white">
+      <h2 class="text-2xl font-bold mb-3">Hire Portal</h2>
+      <p class="text-blue-100 mb-4">Discover skilled professionals quickly.</p>
+
+      <h3 class="text-lg font-semibold mb-2">Top Skills</h3>
+      <ul class="space-y-1 text-blue-100">
+        <li>• Web Development</li>
+        <li>• UI/UX Design</li>
+        <li>• Digital Marketing</li>
+        <li>• Data Analytics</li>
+        <li>• Cloud & DevOps</li>
+      </ul>
+    </div>
+
+    <!-- RIGHT: Google Auth Login -->
+    <div class="p-6 flex flex-col items-center justify-center">
+
+      <h2 class="text-xl font-semibold mb-1">Sign In</h2>
+      <p class="text-gray-600 mb-6">Use your Google Account</p>
+
+      <!-- Google Button -->
+      <button class="w-full max-w-xs flex items-center justify-center gap-3 border py-3 rounded-lg hover:bg-gray-100 transition">
+        <img 
+          src="https://www.gstatic.com/images/branding/product/1x/googleg_48dp.png"
+          class="w-5 h-5"
+        />
+       
+      <a href="{% provider_login_url 'google'%}">Login with Google</a>
+      </button>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="{% static 'src/output.css' %}">
+</head>
+
+<body class="bg-gray-100 flex">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-white shadow-md h-screen p-6 hidden md:block">
+    <div class="text-center mb-8">
+      {% if pd.image %}
+        <img src="{{pd.image.url}}" alt="Profile Picture"
+             class="w-20 h-20 rounded-full mx-auto border-4 border-indigo-500">
+      {% else %}
+        <img src="https://via.placeholder.com/150"
+             class="w-20 h-20 rounded-full mx-auto border-4 border-indigo-500"
+             alt="Profile Picture">
+      {% endif %}
+      
+
+      <h2 class="mt-4 text-xl font-semibold text-gray-800">{{ pd.name }}</h2>
+      <p class="text-gray-500 text-sm">{{ pd.professional }}</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="space-y-2">
+      <a class="block px-4 py-2 rounded hover:bg-indigo-100" href="/page/dashboard/">DashBoard</a>
+
+      <a href="#" class="block px-4 py-2 rounded hover:bg-indigo-100">Profile</a>
+      <a href="#" class="block px-4 py-2 rounded hover:bg-indigo-100">Jobs Applied</a>
+      <a href="#" class="block px-4 py-2 rounded hover:bg-indigo-100">Saved Jobs</a>
+      <a href="#" class="block px-4 py-2 rounded hover:bg-indigo-100">Settings</a>
+      <a href="{% url 'lf:logo' %}" class="block px-4 py-2 rounded hover:bg-red-100 text-red-600">Logout</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-6">
+
+    <!-- Profile Card -->
+    <div class="bg-white shadow-lg rounded-lg p-6">
+      <div class="flex flex-col md:flex-row gap-6">
+
+        <!-- Profile Image -->
+        <div>
+          {% if pd.image %}
+            <img src="{{ pd.image.url }}" alt="Profile Picture"
+                 class="w-32 h-32 rounded-full border-4 border-indigo-500">
+          {% else %}
+            <img src="https://via.placeholder.com/150"
+                 class="w-32 h-32 rounded-full border-4 border-indigo-500"
+                 alt="Profile Picture">
+          {% endif %}
+        </div>
+
+        <!-- Profile Info -->
+        <div class="flex-1">
+          <h2 class="text-2xl font-semibold text-gray-800">{{ pd.name }}</h2>
+          <p class="text-gray-500 mt-1">{{ pd.professional }}</p>
+
+          <div class="mt-4 text-gray-700 space-y-1">
+            <p><strong>Email:</strong> {{ pd.email }}</p>
+            <p><strong>Phone:</strong> {{ pd.number }}</p>
+            <p><strong>Location:</strong> {{ pd.location }}</p>
+          </div>
+
+          <div class="mt-4">
+            <h3 class="font-semibold text-gray-800 mb-2">Skills</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">
+                {{ pd.skills }}
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Experience & Education -->
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <div class="bg-white shadow-lg rounded-lg p-6">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Work Experience</h3>
+        <p class="text-gray-700 whitespace-pre-line">{{ pd.work_experience }}</p>
+      </div>
+
+      <div class="bg-white shadow-lg rounded-lg p-6">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Education</h3>
+        <p class="text-gray-700 whitespace-pre-line">{{ pd.education }}</p>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="mt-6 bg-white shadow-lg rounded-lg p-6">
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Projects</h2>
+      <p class="text-gray-700 whitespace-pre-line">{{ pd.project }}</p>
+    </div>
+
+    <!-- Update Button -->
+    <div class="mt-4">
+      <a href="/page/update_profile/"
+         class="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-600 transition">
+        Update Profile
+      </a>
+    </div>
+
+  </main>
+
+</body>
+</html>

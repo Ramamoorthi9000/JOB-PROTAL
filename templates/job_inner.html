@@ -1,0 +1,53 @@
+{%extends 'basic/base.html'%}
+{%block bodycontent %} class="bg-gray-100 font-sans""{%endblock%}
+{%block content %}
+</head>
+
+
+    {%for all_details in details%}
+
+
+  <!-- All Companies & Job Details -->
+  <div class="max-w-7xl mx-auto mt-12 space-y-10">
+
+    <!-- Company Card -->  
+
+    <div class="bg-white p-6 rounded-lg shadow">
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+        <img src="https://via.placeholder.com/120" alt="Company Logo" class="w-28 h-28 rounded-full">
+        <div>
+          <h2 class="text-2xl font-bold mb-2"><strong></strong>{{all_details.Company}}</h2>
+          <p class="text-gray-600 mb-1"><strong>Industry:</strong> {{all_details.Industry}}</p>
+          <p class="text-gray-600 mb-1"><strong>Location:</strong> {{all_details.Location}}</p>
+          <p class="text-gray-600 mb-1"><strong>Company Size:</strong> {{all_details.Company_Size}}</p>
+          <p class="text-gray-600 mb-1"><strong>Founded Year:</strong>{{all_details.}}</p>
+          <p class="text-gray-700 mt-2"><strong>Description:</strong>{{all_details.Description}}.</p>
+          <p class="text-blue-600 mt-2"><strong>Website:</strong> <a href="#">www.techsolutions.com,{{all_details.}}</a></p>
+        </div>
+      </div>
+
+      <!-- Job Details -->
+      <div class="mt-6 bg-gray-50 p-4 rounded-lg">
+        <h3 class="text-xl font-bold mb-2">{{all_details.job_name}}</h3>
+        <p class="text-gray-600 mb-1"><strong>Location:</strong> {{all_details.Location}}</p>
+        <p class="text-gray-600 mb-1"><strong>Experience:</strong> {{all_details.Experience}}</p>
+        <p class="text-gray-600 mb-1"><strong>Skills:</strong> {{all_details.Skills}}</p>
+        <p class="text-gray-700 mt-2"><strong>Job Description:</strong> {{all_details.Description}}</p>
+        <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Apply Now</button>
+      </div>
+    </div>
+
+
+  
+  </div>
+  {%endfor%}
+
+
+  
+
+{%endblock%}
+
+<h1>
+
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil maxime sequi quis nesciunt est unde deleniti, laboriosam quo non nostrum animi porro incidunt architecto vitae, iure odit sapiente fuga autem eos. Dignissimos odit nam placeat inventore. Aspernatur voluptatem omnis quis laboriosam. Voluptate eveniet amet dolorem cum dolor consectetur voluptates, quidem reprehenderit cupiditate corporis laudantium consequatur illo porro. Fugiat, architecto porro!
+</h1>

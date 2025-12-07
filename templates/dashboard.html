@@ -1,0 +1,101 @@
+{%extends 'basic/base.html'%}
+{%block bodycontent %} Job Listings {%endblock%}
+{%block content %}
+
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white py-6">
+    <div class="container mx-auto text-center">
+      <h1 class="text-3xl font-bold">Job Listings</h1>
+      <p class="mt-2 text-lg">Find your perfect job quickly and easily</p>
+    </div>
+  </header>
+
+
+  
+<!-- Search Bar -->
+<form method="GET">
+  <div class="container mx-auto mt-10 bg-white py-8 px-6 rounded-lg shadow flex flex-col md:flex-row items-center gap-4">
+
+    <h1 class="text-2xl font-bold text-gray-800 md:mr-10 bg-green-200">
+      JOB SEARCH PORTAL
+    </h1>
+
+    <input 
+      type="text" 
+      name="q"
+      value="{{request.GET.q}}"
+      placeholder="Search jobs, skills, company..."
+      class="flex-1 p-3 rounded-lg border border-gray-300 shadow-sm 
+             focus:outline-none focus:ring-2 focus:ring-blue-500"
+    >
+
+    <button type="submit"
+      class=" bg-blue-600 text-white px-6 py-3 rounded-lg shadow 
+             hover:bg-blue-700 transition ">
+      Search
+    </button>
+
+  </div>
+</form>
+
+
+
+
+
+
+  <!-- Job List Section -->
+  <section class="container mx-auto px-4 py-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for all_details in details %}
+
+    <!-- Job Card -->
+    <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+      <h3 class="text-xl font-bold mb-2">{{ all_details.job_name }}</h3>
+      <p class="text-gray-700 mb-1"><strong>Company:</strong> {{ all_details.Company }}</p>
+      <p class="text-gray-700 mb-1"><strong>Location:</strong> {{ all_details.Location }}</p>
+      <p class="text-gray-700 mb-4"><strong>Type:</strong> {{ all_details.Type }}</p>
+      <p class="text-gray-600 mb-4"><strong>Need skills:</strong> {{ all_details.Skills }}</p>
+      
+      <a href="{% url 'job:inner' all_details.id %}">
+        <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">
+          Apply Now
+        </button>
+      </a>
+    </div>
+
+    {% empty %}
+      <p class="text-gray-600 col-span-3 text-center text-lg font-semibold">
+        No results found
+      </p>
+    {% endfor %}
+
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-bold mb-2">Backend Developer</h3>
+        <p class="text-gray-700 mb-1"><strong>Company:</strong> Innovatech</p>
+        <p class="text-gray-700 mb-1"><strong>Location:</strong> Remote</p>
+        <p class="text-gray-700 mb-4"><strong>Type:</strong> Full-time</p>
+        <p class="text-gray-600 mb-4">Develop server-side logic, database interactions, and APIs for scalable applications.</p>
+        <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">Apply Now</button>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-bold mb-2">Digital Marketing Specialist</h3>
+        <p class="text-gray-700 mb-1"><strong>Company:</strong> MarketPro</p>
+        <p class="text-gray-700 mb-1"><strong>Location:</strong> Los Angeles, USA</p>
+        <p class="text-gray-700 mb-4"><strong>Type:</strong> Part-time</p>
+        <p class="text-gray-600 mb-4">Manage SEO, social media campaigns, and content strategy to drive engagement and conversions.</p>
+        <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">Apply Now</button>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+{%endblock%}
+    
+    
+

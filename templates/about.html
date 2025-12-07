@@ -1,0 +1,70 @@
+{% extends 'basic/base.html' %}
+{% block bodycontent %} Job Portal Features {% endblock %}
+{% block content %}
+
+<!-- Header -->
+<header class="bg-blue-600 text-white py-6 shadow-lg">
+    <div class="container mx-auto text-center bg-blue-600">
+        <h1 class="text-3xl font-bold">Job Portal Features</h1>
+        <p class="mt-2 text-lg">All the tools you need to connect talent with opportunity</p>
+    </div>
+</header>
+
+<!-- Whole Section Background -->
+<section class="container mx-auto px-4 py-12 bg-gray-100">
+    <div class="max-w-5xl mx-auto space-y-10">
+
+        <!-- Job Seeker Features -->
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+            <h2 class="text-2xl font-semibold mb-4 text-blue-600 bg-white">Features for Job Seekers</h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 bg-white">
+                <li class="bg-white">User registration and login</li>
+                <li class="bg-white">Profile management and resume upload</li>
+                <li class="bg-white">Job search with filters (location, category, salary, etc.)</li>
+                <li class="bg-white">Apply online and track applications</li>
+                <li class="bg-white">Job alerts and notifications</li>
+                <li class="bg-white">Saved jobs and favorites</li>
+            </ul>
+        </div>
+
+        <!-- Employer Features -->
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+            <h2 class="text-2xl font-semibold mb-4 text-blue-600 bg-white">Features for Employers</h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 bg-white">
+                <li class="bg-white">Employer registration and login</li>
+                <li class="bg-white">Post, edit, and manage jobs</li>
+                <li class="bg-white">View and manage applicants</li>
+                <li class="bg-white">Search for candidates by skills and experience</li>
+                <li class="bg-white">Employer dashboard with analytics</li>
+            </ul>
+        </div>
+
+        <!-- Admin Features -->
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+            <h2 class="text-2xl font-semibold mb-4 text-blue-600 bg-white">Features for Admin</h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 bg-white">
+                <li class="bg-white">Manage users and employers</li>
+                <li class="bg-white">Approve or remove job postings</li>
+                <li class="bg-white">Manage categories, skills, and tags</li>
+                <li class="bg-white">Analytics and reports for site activity</li>
+                <li class="bg-white">Content management (pages, banners, blog)</li>
+            </ul>
+        </div>
+
+        <!-- Common & Advanced Features -->
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+            <h2 class="text-2xl font-semibold mb-4 text-blue-600 bg-white">Common & Advanced Features</h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 bg-white">
+                <li class="bg-white">Responsive design for mobile and desktop</li>
+                <li class="bg-white">Secure login and data encryption</li>
+                <li class="bg-white">Search engine optimization (SEO)</li>
+                <li class="bg-white">Newsletter and blog integration</li>
+                <li class="bg-white">Optional: AI-based job recommendations</li>
+                <li class="bg-white">Optional: Resume builder, chat system, payment integration</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
